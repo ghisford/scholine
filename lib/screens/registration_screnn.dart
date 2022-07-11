@@ -84,15 +84,15 @@ class _RegisterViewState extends State<RegisterView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.15,
+                    height: MediaQuery.of(context).size.height * 0.12,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.5,
                     child: const Text(
                       "Create Account",
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 36,
                         color: Colors.white,
                       ),
                     ),
@@ -114,6 +114,8 @@ class _RegisterViewState extends State<RegisterView> {
                         hintText: 'Name',
                         hintStyle: TextStyle(
                           color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
                         )),
                     controller: _name,
                   ),
@@ -130,6 +132,8 @@ class _RegisterViewState extends State<RegisterView> {
                         hintText: 'Email',
                         hintStyle: TextStyle(
                           color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
                         )),
                     controller: _email,
                   ),
@@ -146,6 +150,8 @@ class _RegisterViewState extends State<RegisterView> {
                         hintText: 'Password',
                         hintStyle: TextStyle(
                           color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
                         )),
                     controller: _password,
                   ),
@@ -155,13 +161,16 @@ class _RegisterViewState extends State<RegisterView> {
                   Row(
                     children: [
                       TextButton(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
                         onPressed: () {},
                         child: const Text(
                           'Sign up',
                           style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: 30,
+                            fontSize: 28,
                           ),
                         ),
                       ),
@@ -175,12 +184,16 @@ class _RegisterViewState extends State<RegisterView> {
                     height: MediaQuery.of(context).size.height * 0.045,
                   ),
                   TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
                     onPressed: () {},
                     child: const Text(
                       "Sign in",
                       style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 17,
                       ),
                     ),
                   )
