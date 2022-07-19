@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -36,10 +35,12 @@ class _RegisterViewState extends State<RegisterView> {
         children: <Widget>[
           //orange center
           const Positioned(
+            width: 481.7652893066406,
             height: 706.8624877929688,
-            left: 0,
-            right: 0,
-            top: 0,
+            // height: 706.8624877929688,
+            left: -70,
+            // right: -1,
+            top: 53,
             child: Image(
               image: AssetImage("assets/images/Vector 3.png"),
             ),
@@ -47,10 +48,12 @@ class _RegisterViewState extends State<RegisterView> {
 
 // middle dark
           const Positioned(
-            height: 321.6341247558594,
             width: 393.5000305175781,
+            height: 321.6341247558594,
+            // height: 321.6341247558594,
+            // width: 393.5000305175781,
             left: -17,
-            top: -2,
+            // top: -2,
             child: Image(
               image: AssetImage("assets/images/Vector 1.png"),
             ),
@@ -58,10 +61,12 @@ class _RegisterViewState extends State<RegisterView> {
 
           // small orange above
           const Positioned(
-            height: 141,
             width: 426.5,
+            height: 141.0,
+            // height: 141,
+            // width: 426.5,
             left: -30.5,
-            top: -10.5,
+            // top: -10.5,
             child: Image(
               image: AssetImage("assets/images/Vector 4.png"),
             ),
@@ -108,9 +113,11 @@ class _RegisterViewState extends State<RegisterView> {
                     autocorrect: false,
                     decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
                         hintText: 'Name',
                         hintStyle: TextStyle(
                           color: Colors.white,

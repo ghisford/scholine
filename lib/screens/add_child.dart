@@ -1,111 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:scholine/custom_widgets/divider1.dart';
+import 'package:scholine/models/student_model.dart';
 
-class PickChild extends StatelessWidget {
-  const PickChild({Key? key}) : super(key: key);
+class PickChild extends StatefulWidget {
+  PickChild({Key? key}) : super(key: key);
 
+  @override
+  State<PickChild> createState() => _PickChildState();
+}
+
+class _PickChildState extends State<PickChild> {
+  Student student1 = Student(
+      name: "Joanna nantumbwe ", photoUrl: "assets/images/Ellipse 4.png");
+  Student student2 =
+      Student(name: "Anna Nuwagira", photoUrl: "assets/images/Ellipse 5.png");
+  Student student3 =
+      Student(name: "Anita Shanel", photoUrl: "assets/images/Ellipse 6.png");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(38, 38, 38, 1),
-      body: Stack(children: <Widget>[
-        Positioned(
-          left: MediaQuery.of(context).size.width * (33 / 375),
-          // right: 182,
-          top: MediaQuery.of(context).size.height * (95 / 812),
-          child: const Text(
+      backgroundColor: const Color.fromARGB(38, 38, 38, 1),
+      body: Stack(children: [
+        const Positioned(
+          top: 95,
+          left: 33,
+          child: Text(
             "Pick a child",
             style: TextStyle(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w400,
               fontSize: 30,
               color: Colors.white,
             ),
           ),
         ),
+        const Positioned(
+          top: 561,
+          left: -20,
+          child: Image(
+            image: AssetImage(
+              "assets/images/Vector 2.png",
+            ),
+          ),
+        ),
         Positioned(
           left: 33,
-          top: 229,
+          top: 670,
           child: Row(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 8,
-                      ),
-                    ]),
-                child: const Image(
-                  image: AssetImage("assets/images/Ellipse 4.png"),
+              TextButton(
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'Add a child',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    fontSize: 28,
+                  ),
                 ),
               ),
+              const Icon(
+                Icons.arrow_forward,
+                color: Colors.white,
+              )
             ],
           ),
         ),
-        const Positioned(
-          left: 33,
-          width: 310,
-          top: 431,
-          child: Divider(
-            color: Color.fromARGB(255, 255, 255, 40),
-            height: 1,
-          ),
-        ),
         Positioned(
-          left: 33,
-          top: 342,
-          child: Row(
+          left: 24,
+          top: 180,
+          child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 8,
-                      ),
-                    ]),
-                child: const Image(
-                  image: AssetImage("assets/images/Ellipse 5.png"),
-                ),
-              ),
-              const Positioned(
-                left: 112,
-                child: Text(
-                  "Joana Nantumbwe",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const Positioned(
-          left: 33,
-          width: 310,
-          top: 320,
-          child: Divider(
-            color: Color.fromARGB(255, 255, 255, 40),
-            height: 1,
-          ),
-        ),
-        Positioned(
-          left: 33,
-          top: 449,
-          child: Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 8,
-                      ),
-                    ]),
-                child: const Image(
-                  image: AssetImage("assets/images/Ellipse 6.png"),
-                ),
-              ),
+              SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: ListView(
+                      padding: const EdgeInsets.only(left: 8),
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        student1.detailsTile(),
+                        const Divider1(),
+                        student2.detailsTile(),
+                        const Divider1(),
+                        student3.detailsTile(),
+                       
+                      ],
+                    ),
+                  ))
             ],
           ),
         ),

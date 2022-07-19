@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scholine/screens/add_child.dart';
-import 'package:scholine/screens/registration_screnn.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Flutter Demo',
     theme: _buildTheme(Brightness.light),
-    home: const PickChild(),
+    home:  PickChild(),
     // routes: {homePageRoute: (context) => const HomePage(),},
   ));
 }
